@@ -8,7 +8,7 @@ import Header from '../../containers/Header/Header'
 
 class App extends Component {
   render() {
-    console.log(Login)
+    // console.log(Login)
     return (
       <div className="App" >
         <Header />

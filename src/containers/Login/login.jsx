@@ -64,7 +64,7 @@ class Login extends Component {
                     <div className={classes.buttonRoot}>
                         <Button
                             label="Cancel"
-                            variant="flat"
+                            variant="outlined"
                             color="secondary"
                             size="large"
                             className={classes.submitButton} >
