@@ -11,7 +11,7 @@ class App extends Component {
     // console.log(Login)
     return (
       <div className="App" >
-        <Header />
+        {/* <Header /> */}
         <Login />
       </div>
     );
