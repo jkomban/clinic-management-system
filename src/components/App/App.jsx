@@ -2,18 +2,18 @@ import React, {
   Component
 } from 'react';
 // import logo from '../../resources/logo.svg';
+import { BrowserRouter } from 'react-router-dom'
 import './App.css';
-import { Login } from '../../containers/Login'
-import Header from '../../containers/Header/Header'
+// import { Login } from '../../scenes/Login'
+// import AppRoutes from '../../routes'
 
 class App extends Component {
   render() {
-    // console.log(Login)
+    console.log(`Inside App.jsx ${JSON.stringify(this.props)}`)
     return (
-      <div className="App" >
-        {/* <Header /> */}
-        <Login />
-      </div>
+      <BrowserRouter basename='/'>
+        {this.props.children}
+      </BrowserRouter>
     );
   }
 }
