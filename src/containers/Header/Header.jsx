@@ -22,11 +22,11 @@ class Header extends Component {
         return (
             <AppBar position="static">
                 <Toolbar>
-                    {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                    <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
-                    </IconButton> */}
+                    </IconButton>
                     <Typography variant="title" color="inherit" className={classes.flex}>
-                        Clinic Management System
+                        Ayur - Clinic Management System
                     </Typography>
                     {/* <Button color="inherit">Login</Button> */}
                 </Toolbar>

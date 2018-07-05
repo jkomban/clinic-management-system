@@ -37,7 +37,7 @@ const loginStyles = theme => ({
 
 class Login extends Component {
     state = {
-        isLoggedIn: false
+        isLoggedIn: false,
     }
 
     componentDidMount() {
