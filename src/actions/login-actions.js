@@ -23,7 +23,7 @@ export default function authenticate(user, pass) {
 }
 
 function loginSuccess(state, response) {
-    console.log(`loging-action:loginSuccess() - ${JSON.stringify(Object.assign({},state,{isAuthenticated:true}))}`)
+    console.log(`loging-action:loginSuccess() - `)
     return {
         type: RETRIEVED_CREDENTIALS,
         credentials: response.data

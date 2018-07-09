@@ -18,10 +18,12 @@ export default function loginReducer(state = INIT_STATE, action) {
         //     })
         case RETRIEVED_CREDENTIALS:
             console.log(`login-reducer:loginReducer()-RETRIEVED_CREDENTIALS ${JSON.stringify(state)} ${JSON.stringify(action)}`)
-            return Object.assign({}, state, {
+            const returnObject = Object.assign({}, state, {
                 credentials: action.credentials,
                 inProgress: false
             })
+            console.log(`login-reducer:loginReducer()-RETRIEVED_CREDENTIALS ${JSON.stringify(returnObject)}`)
+            return returnObject
             // case LOGIN_END:
             //     console.log(`Inside loginReducer LOGIN_END`)
             //     return Object.assign({}, state, {

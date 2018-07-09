@@ -62,6 +62,7 @@ class Login extends Component {
     handleClick = async (e) => {
         console.log(`calling authenticate`)
         const result = await this.props.authenticate(this.state.user, this.state.pass)
+        console.log(`Currrent State before calling setUserSession ${JSON.stringify(this.state)}`)
         await this.props.setUserSession(result)
         console.log(`login.jsx:handleClick() - current props ${JSON.stringify(this.props)}`)
         console.log(`login.jsx:handleClick() - result of handleClick ${JSON.stringify(result)}`)

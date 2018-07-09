@@ -26,7 +26,7 @@ class Header extends Component {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="title" color="inherit" className={classes.flex}>
-                        Ayur - Clinic Management System
+                        -  Management System
                     </Typography>
                     {/* <Button color="inherit">Login</Button> */}
                 </Toolbar>
