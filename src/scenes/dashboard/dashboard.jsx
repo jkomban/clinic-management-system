@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import { Link, BrowserRouter, Redirect } from 'react-router-dom'
-import fakeAuth from '../../services/auth/fakeAuth'
+import { Redirect } from 'react-router-dom'
+// import fakeAuth from '../../services/auth/fakeAuth'
 import Header from '../../containers/Header/Header'
+// import { resetUserSession } from '../../actions/login-actions'
 class Dashboard extends Component {
     state = {
         isLoggedIn: true
     }
     handleClick = async () => {
         console.log(`Clicked... ${this.state.isLoggedIn}`)
-        await fakeAuth.logout()
-        this.setState({ isLoggedIn: false })
+        // await fakeAuth.logout()
+        // this.setState({ isLoggedIn: false })
 
     }
     render() {
