@@ -7,7 +7,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     return <Route {...rest} render={(props) => {
         // console.log(`Inside of inside private route... ${fakeAuth.isAuthenticated} ${JSON.stringify(props)}`)
         return fakeAuth.isAuthenticated === true
-            ? <Component {...props} />
+            ? <div>
+                <Component {...props} />
+            </div>
             : <Redirect to='/login' />
     }} />
 }

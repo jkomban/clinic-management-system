@@ -22,6 +22,7 @@ export default function usersessionReducer(state = INIT_STATE, action) {
             console.log(`usersession-reducer: RESET_USERSESSION ${JSON.stringify(state)}`)
             return INIT_STATE
         default:
-            return INIT_STATE
+            console.log(`usersession-reducer: default ${JSON.stringify(state)}`)
+            return state
     }
 }

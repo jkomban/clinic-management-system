@@ -18,7 +18,11 @@ class Dashboard extends Component {
     render() {
         console.log(`Dashboard.jsx render called ${this.state.isLoggedIn}`)
         if (this.props.userSession.isAuthenticated === true)
-            return <div><Header /> <h1> Inside dashboard </h1> <button onClick={this.handleClick}> logout </button></div>
+            return <div>
+                        <Header />
+                        <h1> Inside dashboard </h1> 
+                        <button onClick={this.handleClick}> logout </button>
+                    </div>
         else
             return <Redirect to='/login' />
     }

@@ -1,4 +1,4 @@
-import { AppBar, Button, TextField, Typography, Toolbar } from '@material-ui/core'
+import { AppBar, Button, TextField, Typography, Toolbar, Modal } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import authenticate from '../../actions/login-actions'
 import { setUserSession } from '../../actions/usersession-action'
@@ -19,7 +19,8 @@ const loginStyles = theme => ({
         width: '30em',
         margin: 'auto',
         marginTop: '5em',
-        boxShadow: '4px 2px 11px 2px rgba(0,0,0,0.25)'
+        boxShadow: '4px 2px 11px 2px rgba(0,0,0,0.25)',
+        backgroundColor:theme.palette.background.paper
     },
     textField: {
         marginLeft: theme.spacing.unit,
@@ -77,54 +78,59 @@ class Login extends Component {
     render() {
         const { classes } = this.props;
         // console.log(classes)
-        let myLoginForm = <form>
-            <div className={classes.root}>
-                <AppBar position="static">
-                    <Toolbar
-                        color="primary">
-                        <Typography
-                            variant="title"
-                            color="inherit"
-                            className={classes.flex}>Login
+        let myLoginForm = <Modal
+            open={true}
+        >
+            <form>
+                <div className={classes.root}>
+                    <AppBar position="static">
+                        <Toolbar
+                            color="primary">
+                            <Typography
+                                variant="title"
+                                color="inherit"
+                                className={classes.flex}>Login
                 </Typography>
-                    </Toolbar>
-                </AppBar>
-                <TextField
-                    placeholder="Enter your Username"
-                    label="Username"
-                    className={classes.textField}
-                    onChange={event => this.updateState(event, 'user')}
-                />
-                <TextField
-                    placeholder="Enter your Password"
-                    label="Password"
-                    margin="normal"
-                    type="password"
-                    className={classes.textField}
-                    onChange={event => this.updateState(event, 'pass')}
+                        </Toolbar>
+                    </AppBar>
+                    <TextField
+                        placeholder="Enter your Username"
+                        label="Username"
+                        className={classes.textField}
+                        onChange={event => this.updateState(event, 'user')}
+                    />
+                    <TextField
+                        placeholder="Enter your Password"
+                        label="Password"
+                        margin="normal"
+                        type="password"
+                        className={classes.textField}
+                        onChange={event => this.updateState(event, 'pass')}
 
-                />
-                <div className={classes.buttonRoot}>
-                    <Button
-                        label="Cancel"
-                        variant="outlined"
-                        color="secondary"
-                        size="large"
-                        className={classes.submitButton} >
-                        Cancel
+                    />
+                    <div className={classes.buttonRoot}>
+                        <Button
+                            label="Cancel"
+                            variant="outlined"
+                            color="secondary"
+                            size="large"
+                            className={classes.submitButton} >
+                            Cancel
                 </Button>
-                    <Button
-                        label="Submit"
-                        variant="raised"
-                        color="primary"
-                        size="large"
-                        className={classes.submitButton}
-                        onClick={this.handleClick}>
-                        Submit
+                        <Button
+                            label="Submit"
+                            variant="raised"
+                            color="primary"
+                            size="large"
+                            className={classes.submitButton}
+                            onClick={this.handleClick}>
+                            Submit
                 </Button>
-                </div>
-            </div >
-        </form>
+                    </div>
+                </div >
+            </form>
+        </Modal >
+
         console.log(`login.jsx:render() state -[${JSON.stringify(this.state)}]`)
         console.log(`login.jsx:render() props -[${JSON.stringify(this.props.userSession)}]`)
         if (this.props.userSession.isAuthenticated === true)
@@ -138,7 +144,6 @@ class Login extends Component {
 function mapStateToProps(state) {
     console.log(`login.jsx:mapStatetoProps() - ${JSON.stringify(state)}`)
     return state
-
 }
 
 function mapDispatchToProps(dispatch) {

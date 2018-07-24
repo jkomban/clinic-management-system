@@ -6,6 +6,7 @@ import AppRoutes from './routes'
 import registerServiceWorker from './registerServiceWorker';
 import store from './store/configureStore'
 import { Provider } from 'react-redux'
+// import SideDrawer from './containers/SideDrawer/SideDrawer'
 
 ReactDOM.render(
     <Provider store={store}>
